@@ -1,0 +1,67 @@
+#!/bin/bash
+echo "Welcome to the encrypt/decrypt script by HDE"
+echo "Place the script in the same folder as the file you want to 
+change"
+
+echo "Choose an action : | 1 encrypt | 2 decrypt | 3 exit |"
+read action
+if [ $action -eq 3 ] ; then
+	echo "Goodbye"
+	exit
+fi
+if [ $action -eq 1 ]
+	then
+			echo "Enter the exact file_name with extention"
+			read file;
+			if [ -f $file ]
+			then
+				echo "Write password encryption:"
+				gpg --passphrase-fd 0 --batch -c $file
+				echo "I have encrypted the file successfully !"
+			else
+				echo "error : file does not exist !"
+				exit
+			fi
+	echo "would you like to delete the original ? (y/n)"
+	read answer
+	if [ "$answer" = "y" ]
+	then
+		rm -rf $file
+		echo "$file deleted."
+	else
+		echo "$file not deleted. Goodbye."
+		exit
+	fi
+fi
+if [ $action -eq 2 ] ; then
+	echo "Enter the file_name with the extention .gpg"
+	read file2
+	ext="echo $file2 | grep ".gpg" | wc -l"
+	ext2=$(eval $ext)
+	if [ -f $file2 ] && [ $ext2 -eq 1 ]
+	then
+		file3="echo $file2 | wc -c"
+		file4=$(eval $file3)
+		file7=$(($file4 - 5))
+		file5="echo $file2 | head -c $file7"
+		file6=$(eval $file5)
+		echo "Write encryption password:"
+		gpg --passphrase-fd 0 --batch -d $file2 > $file6
+		echo "$file2 decrypted."
+	else
+		echo "error : wrong extention or file does not exist !"
+		exit
+	fi
+	echo "Would you like to delete the encrypted file ? (y/n)"
+	read answer2
+	if [ "$answer2" = "y" ] || [ "$answer2" = "n" ]
+	then
+		if [ "$answer2" = "y" ]
+		then
+			rm $file2
+			echo "$file2 deleted."
+		else
+			echo "$file2 not deleted. Goodbye"
+		fi
+	fi
+fi

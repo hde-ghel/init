@@ -1,0 +1,3 @@
+pkill processus_name
+kill processus_id
+kill $! (kill the most recent background process)

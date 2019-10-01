@@ -1,0 +1,2 @@
+sudo hostname NAME
+#sudo echo NAME > /etc/hostname

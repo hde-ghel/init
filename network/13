@@ -1,0 +1,2 @@
+#2.2.2.10.in-addr.arpaname = e-r2-p2.s19.be.
+nslookup 10.2.2.2

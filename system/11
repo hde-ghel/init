@@ -1,0 +1,2 @@
+df -h
+#-h for human readable output

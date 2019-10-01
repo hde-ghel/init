@@ -1,0 +1,4 @@
+du -h -d 1 /var
+#du : disk usage stat
+#-h : human readable
+#-d 1 display only one entry for all file and dir depth

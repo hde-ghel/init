@@ -1,0 +1,3 @@
+ls -la /etc/rc6.d
+#Il s’agit des services de runlevel niveau 6 (donc les services affecté au redémarrage) 
+#service --status-all

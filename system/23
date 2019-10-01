@@ -1,0 +1,7 @@
+hostname -f pour trouver le nom de domaine
+ssh user_name:password@hostname
+cela donnerais ssh init:root@debian
+commande users pour verifier
+
+en session graphique :
+	logout et log sur la nouvelle session

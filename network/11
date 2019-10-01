@@ -1,0 +1,2 @@
+#NAT 10.60.1.1
+traceroute slash16.org | awk 'NR==2'

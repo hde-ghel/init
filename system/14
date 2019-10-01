@@ -1,0 +1,2 @@
+tail -f /var/log/syslog &
+#& : permet de lancer la commande en arrière plan et de récupérer la main sur le terminal

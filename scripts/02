@@ -1,0 +1,12 @@
+#!bin/bash
+echo "user_name to delete"
+read user
+if [ "$user" = "root" ]
+	then
+		echo "Can not delete ROOT user"
+		exit 1
+	fi
+pkill -u $user
+echo "$user process killed !"
+userdel -rf $user
+echo "$user session deleted !"

@@ -1,0 +1,2 @@
+#ipconfig getpacket en0 | grep yiaddr
+ifconfig en0 | grep "inet " | awk {'print $1, $2'}
