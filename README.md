@@ -1,5 +1,5 @@
 # init (19 School 42 network)
-Project covers the basics of system administration and proposes a lot of small tasks divided into three groups:
+Project that covers the basics of system and network administration. Consist of small tasks divided into three groups:
 * network
 * system
 * scripts
